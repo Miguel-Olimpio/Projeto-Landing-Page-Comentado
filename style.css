@@ -1,0 +1,251 @@
+
+/* Basicamente isto serve para podermos utilizar a unidade de medida rem que com esse tamanho de fonte
+vai equivaler 1rem = 10px */
+html{
+    font-size: 62.5%;
+}
+body{
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "hero hero hero hero"
+    "about about about about"
+    "services services services services"
+    "projects projects projects projects"
+    "footer footer footer footer";
+    /* basicamente o que esta sendo dito é para repetir 4 colunas e cada uma com uma fração 1fr
+    de tamanho, se adequando entao com o conteudo presente em cada uma delas preenchendo sempre
+    o 100% da area demarcada */
+    grid-template-columns: repeat(4,1fr);
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.header{
+    grid-area: header;
+    background-color: #ffffff;
+}
+.header .header-container{
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+}
+.header h1{
+    font-size: 3rem;
+    font-weight: 700;
+    /* Basicamente o transition é porque eu programei um a:hover e para que esta transição fique
+    melhor animada eu coloco um gtransition de 0.3s para que fique mais fluido a transição da cor
+    black para a coral neste caso */
+    transition: 0.3s;
+}
+/* Aqui estou dizendo pra minha maquina ao passar o mouse no link a (a:hover) estilizar o h1 */
+.header a:hover h1{
+    color: coral;
+}
+.hero{
+    grid-area: hero;
+    height: 85vh;/* Basicamente vh quer dizer altura do view port*/
+    background: url('images/lemons.jpg') center center no-repeat;
+    background-size: cover;/*Basicamente este comando é para que a imagem dentro do background
+    se adeque ao tamanho do meu section/div, dentro da tag pai a qual esta inserido o comando*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero h2{
+    font-weight: 500;
+    text-transform: uppercase;/*uppercase é para que todas as letras fiquem maiusculas*/
+}
+/* Basicamente ao me referir a classe hero:after{} quero dizer que todos os comandos
+inseridos sera aplicados no final da minha classe */
+.hero:after{
+    content: url(images/seta_preta.png);
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    /* Para animar é necessario utilizar o comando animation: nomedaanimacao tempo repeticao 
+    movimento ease-in-out */
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+/* Basicamente para criamos a animação utilizamos o @-webkit-keyframes nomedaanimacao{} */
+@-webkit-keyframes downarrow{
+    /* 0% é o inicio da animação para realizar a animação usa-se  -webkit-transform: comando ;*/
+    0%{-webkit-transform: translateY(0); opacity: 0.4;}/*Basicamente é o momento inicial da animação
+    por isso o translate é 0 e o opacity: é a opacidade inicial da animacao*/
+    100%{-webkit-transform: translateY(0.6em);/* Basicamente é o momento final onde o translate
+    sera o deslocamento da minha animação e o opacity é a opacidade final dela */
+    opacity:0.9}
+}
+@media(max-width: 450px){
+    .hero{
+        height:60vh;
+        font-size: 2rem;
+    }
+}
+.about{
+    grid-area: about;
+    /* Basicamente é possivel colocar um grid dentro de outro grid como esta sendo feito aqui, isto facilita a vida pois
+    é muito mais facil formatar um grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    max-width: var(--max-width-size);
+    /* pois sempre que o meu site estiver em uma tela maior o site ira se adequar aquela determinada telo acompanhando a
+    variavel */
+    margin: 0 auto;
+}
+.about .item{
+    padding: 20%;/* utilizamos o padding em % pois ele fica responsivo por si so pois com um numero fixo ele nao consegue se
+    adequar dependendo do numero inserido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.about .item h3{
+    font-weight: 500;
+    font-size: 4rem;
+}
+.about .item p{
+    margin: 30px 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.about .item .btn-know-more{
+    font-size: 1.6rem;
+    /* o align self é necessario pois sem ele a area clicavel da minha tag <a> fica por toda a tag pai, logo ao utilizar
+    o align-self:flex-start fica clicavel somente o botao */
+    align-self: flex-start;
+    font-weight: 400;
+}
+.about .item .btn-know-more:hover{
+    font-weight: 700;
+}
+.about .image{
+    height: 100%;
+    width: 100%;
+}
+.about .image.right{
+    background: url(images/bridge.jpg) center center no-repeat;
+    background-size: cover;
+}
+.about .image.left{
+    background: url(images/sky.jpg) center center no-repeat;
+    background-size: cover;
+}
+@media(max-width: 425px){
+    .about.item{
+        text-align: center;
+    }
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows:repeat(4, 1fr) ;
+    }
+}
+.services{
+    grid-area: services;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+.services .service{
+    padding: 70px 20px;
+}
+.services .service img{
+    width: 250px;
+    margin-bottom: 30px;
+}
+.services .service h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.services .service p{
+    font-size: 2rem;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 20px auto 0;
+    line-height: 25px;/* Para aumentar op tamanho das linhas */
+}
+/* Basicamente estou mandando estilizar o n filho da tag apontada nth-child(n) */
+.services .service:nth-child(1){
+    background-color:lightblue ;
+}
+.services .service:nth-child(2){
+    background-color:lightpink ;
+}
+@media(max-width: 450px){
+    .services{
+        grid-template-columns: 1fr;
+
+    }
+}
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.projects img{
+    height: 100%;
+    transition: 0.3s;
+}
+.projects a:hover{
+    opacity: 0.8;
+}
+@media(max-width: 768px){
+    .projects{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+@media(max-width: 450px){
+    .projects{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+.footer{
+    grid-area: footer;
+    display: flex;
+    background-color: lightgreen;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0;
+}
+.footer h4{
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.footer nav{
+    margin: 50px 0;
+}
+.footer nav ul{
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
+    margin: 0 auto;/* Toda vez que damos uma largura maxima é necessario um margin:0 auto; para alinhar os textos ao meio */
+}
+.footer nav ul li a{
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 20px;
+    transition: 0.3s;
+}
+.footer nav ul li a:hover{
+    font-weight: 700;
+    color: #fff;
+}
+.footer .social i{
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.footer .social a{
+    margin: 20px;
+}
+.footer .social i:hover{
+    color:#fff;
+
+}

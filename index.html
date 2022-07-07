@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência XYZ</title>
+
+    <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="variables.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="/">
+                <h1 class="logo">Agencia XYZ</h1>
+            </a>
+            <nav>
+                <!-- Basicamente ao tornar o site responsivo quero mudar o menu para que o mesmo fique
+            abreviado dentro de um input -->   
+                <input type="checkbox" id="menu-hamburguer">
+                <!-- Ao criar o label retorno o mesmo ao input para que assim tudo que eu programe no
+                mesmo seja retornado ao input -->
+                <label for="menu-hamburguer">
+                <!-- Basicamente o imput é para trabalharmos o click e tanto o div quanto o span
+                será o comportamento após o click -->
+                    <div class="menu">
+                        <span class="hamburguer">
+
+                        </span>
+                    </div>
+                </label>
+                <ul>
+                    <!-- Basicamente ao inserir o #nome em um href estou indicando que ao clicar
+                    no link em questao voce sera direcionado na mesma pagina pro local que o 
+                    #nome esta indicando por exemplo eu possuo no meu site um local onde informa
+                    sobre meus projetos e ao clicar neste href serei levado para o determinado local -->
+                    <li> <a href="#about">About</a></li>
+                    <li> <a href="#services">Service</a></li>
+                    <li> <a href="#projects">Projects</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <h2>We make cool things</h2>
+    </section>
+
+    <section class="about" id="about">
+        <div class="item">
+            <h3>Title</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore dolorum ut aliquid cupiditate omnis quidem vel expedita qui aspernatur nobis, iure, consectetur ullam earum! Minus dolor sapiente quos laborum excepturi.</p>
+            <a href="#" class="btn-know-more">Saiba mais</a>
+        </div>
+        <div class="image right"></div>
+        <div class="image left"></div>
+        <div class="item">
+            <h3>Title</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore dolorum ut aliquid cupiditate omnis quidem vel expedita qui aspernatur nobis, iure, consectetur ullam earum! Minus dolor sapiente quos laborum excepturi.</p>
+            <a href="#" class="btn-know-more">Saiba mais</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service">
+            <img src="images/bolinha1.png" alt="bolinha 1">
+            <div class="service-info">
+                <h3>SEO</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo enim eaque perferendis incidunt cumque sit magnam molestias architecto. Corrupti in dolorum voluptate animi iure. Facilis itaque dolorum rem ex?</p>
+            </div>
+        </div>
+        <div class="service">
+            <img src="images/bolinha2.png" alt="bolinha 2">
+            <div class="service-info">
+                <h3>Landing Pages</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo enim eaque perferendis incidunt cumque sit magnam molestias architecto. Corrupti in dolorum voluptate animi iure. Facilis itaque dolorum rem ex?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="project">
+            <a href="#">
+                <img src="images/tomatoes.jpg" alt="tomates">
+            </a>
+        </div>
+        <div class="project">
+            <a href="#">
+                <img src="images/landscape.jpg" alt="landscape">
+            </a>
+        </div>
+        <div class="project">
+            <a href="#">
+                <img src="images/plants.jpg" alt="plants">
+            </a>
+        </div>
+        <div class="project">
+            <a href="#">
+                <img src="images/flowers.jpg" alt="flowers">
+            </a>
+        </div>
+    </section>
+        
+    <footer class="footer" id="contact">
+        <h4>Agencia XYZ</h4>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a href="">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+               <a href="">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-pinterest"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html> 
